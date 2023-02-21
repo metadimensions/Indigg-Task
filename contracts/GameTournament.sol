@@ -36,7 +36,7 @@ contract GameTournament {
 
     // Join tournament
     function joinTournament(address user) public {
-        require(state == State.WAITING, "Tournament is not open");
+        require(state == State.WAITING, "Tournament not yet started");
         users.push(user);
         if (users.length == NUMBER_OF_USERS) {
             startTournament();
